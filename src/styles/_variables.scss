@@ -1,0 +1,7 @@
+// Colors
+$default-text-color: black;
+$primary-text-color: rgb(67, 47, 248);
+
+:root {
+  --default-text-color: #{$default-text-color};
+}
