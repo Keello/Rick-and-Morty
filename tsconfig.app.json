@@ -27,10 +27,11 @@
     "baseUrl": "src",
     "paths": {
       "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@types/*": ["types/*"],
-      "@ui/*": ["ui/*"],
-      "@styles/*": ["styles/*"]
+      "@app/*": ["app/*"],
+      "@pages/*": ["pages/*"],
+      "@widgets/*": ["widgets/*"],
+      "@shared/*": ["shared/*"],
+      "@styles/*": ["app/styles/*"]
     }
   },
   "exclude": ["node_modules"],
