@@ -8,5 +8,8 @@
   "semi": true,
   "arrowParens": "always",
   "bracketSpacing": true,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "plugins": [
+    "./node_modules/prettier-plugin-rational-order/src/index.js"
+  ]
 }
