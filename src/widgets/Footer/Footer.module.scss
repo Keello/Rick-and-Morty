@@ -1,5 +1,15 @@
-.footer{
+@use '@styles/variables' as v;
+
+.footer {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: v.$secondary-text-color;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: Karla, sans-serif;
+  line-height: 30px;
+  background: white;
+  box-shadow: -2px 0px 8px 2px v.$shadow-color;
 }
