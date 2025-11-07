@@ -1,5 +1,5 @@
 import styles from './Header.module.scss';
-import Logo from '@assets/images/logo.svg?react';
+import Logo from '@assets/images/logo_sm.svg?react';
 
 const Header = () => {
   return (
