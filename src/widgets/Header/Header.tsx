@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import Logo from '@assets/images/logo_sm.svg?react';
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className={styles.header}>
       <div className='container'>
@@ -10,5 +10,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

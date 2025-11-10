@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import styles from './Loader.module.scss';
+import clsx from 'clsx';
 import LoaderSvg from '@assets/images/loader.svg?react';
 
 interface LoaderProps {
@@ -7,17 +8,13 @@ interface LoaderProps {
   label?: string;
 }
 
-const Loader: FC<LoaderProps> = ({ size = 'large', label }) => {
-  let svgSizeClass = styles.loader__svg;
-  svgSizeClass +=
-    size === 'large' ? ` ${styles.loader__svg_large}` : ` ${styles.loader__svg_small}`;
+export const Loader: FC<LoaderProps> = ({ size = 'large', label }) => {
+  const svgClasses = clsx(styles.loader__svg, { [styles[`loader__svg_${size}`]]: !!size });
 
   return (
     <div className={styles.loader}>
-      <LoaderSvg className={svgSizeClass} />
+      <LoaderSvg className={svgClasses} />
       <p className={styles.loader__label}>{label}</p>
     </div>
   );
 };
-
-export default Loader;

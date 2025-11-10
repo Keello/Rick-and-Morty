@@ -1,5 +1,5 @@
 import Logo from '@assets/images/logo_lg.svg?react';
-import Loader from '@shared/ui/Loader/Loader';
+import { Loader } from '@shared/ui';
 
 const MainPage = () => {
   return (

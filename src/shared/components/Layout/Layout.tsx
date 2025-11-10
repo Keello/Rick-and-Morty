@@ -2,7 +2,7 @@ import { Footer, Header } from '@widgets/index';
 import { Outlet } from 'react-router';
 import styles from './Layout.module.scss';
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <>
       <Header />
@@ -13,5 +13,3 @@ const Layout = () => {
     </>
   );
 };
-
-export default Layout;

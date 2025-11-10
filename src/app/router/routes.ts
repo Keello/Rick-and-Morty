@@ -1,4 +1,5 @@
-import { MainPage, Layout, CharacterPage } from '@pages/index';
+import { MainPage, CharacterPage } from '@pages/index';
+import { Layout } from '@shared/components';
 import { createBrowserRouter } from 'react-router';
 
 export const router = createBrowserRouter([
