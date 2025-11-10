@@ -1,0 +1,16 @@
+// Colors
+$light-bg-color: white;
+
+$primary-text-color: #000000;
+$secondary-text-color: #3f3f3f;
+$placeholder-color: rgba(0, 0, 0, 0.6);
+$border-color: rgba(0, 0, 0, 0.38);
+$shadow-color: rgba(0, 0, 0, 0.10);
+
+$status-success: #12B800;
+$status-error: #DF0000;
+$status-warning: #FF9900;
+
+:root {
+  --default-text-color: #{$primary-text-color};
+}
