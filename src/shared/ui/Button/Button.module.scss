@@ -1,8 +1,10 @@
 .button {
-  position: relative;
+  display: flex;
+  gap: 6px;
+  align-items: center;
   padding: 5px 10px;
   background: transparent;
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-radius: 5px;
   cursor: pointer;
 
@@ -11,8 +13,9 @@
   }
 
   &__text {
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 18px;
+    line-height: 21px;
     font-family: Karla, sans-serif;
     text-transform: uppercase;
   }

@@ -1,15 +1,31 @@
-import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { CSSProperties, FC, PropsWithChildren, ReactNode } from 'react';
 import styles from './Button.module.scss';
+import clsx from 'clsx';
 
 interface ButtonProps {
   icon?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+  onClick?: () => void;
 }
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({ icon, children }) => {
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({
+  icon,
+  className,
+  onClick,
+  children,
+  ...rest
+}) => {
   return (
-    <button className={styles.button}>
-      {icon && <span className={styles.button__icon}>{icon}</span>}
-      <span className={styles.button__text}>{children}</span>
-    </button>
+    <>
+      <button
+        className={clsx(styles.button, className)}
+        onClick={onClick}
+        {...rest}
+      >
+        {icon}
+        <span className={styles.button__text}>{children}</span>
+      </button>
+    </>
   );
 };

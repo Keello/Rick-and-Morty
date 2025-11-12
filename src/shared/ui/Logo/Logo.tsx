@@ -8,8 +8,13 @@ interface LogoProps {
   onClick?: () => void;
 }
 
-export const Logo: FC<LogoProps> = ({ size = 'large' }) => {
-  const logoClasses = clsx(styles.logo, { [styles[`logo_${size}`]]: !!size });
+export const Logo: FC<LogoProps> = ({ size = 'large', className, onClick }) => {
+  const logoClasses = clsx(styles.logo, className, { [styles[`logo_${size}`]]: !!size });
 
-  return <div className={logoClasses} />;
+  return (
+    <div
+      onClick={onClick}
+      className={logoClasses}
+    />
+  );
 };
