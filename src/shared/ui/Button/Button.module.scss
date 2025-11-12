@@ -1,0 +1,19 @@
+.button {
+  position: relative;
+  padding: 5px 10px;
+  background: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid black;
+  }
+
+  &__text {
+    font-weight: 700px;
+    font-size: 18px;
+    font-family: Karla, sans-serif;
+    text-transform: uppercase;
+  }
+}

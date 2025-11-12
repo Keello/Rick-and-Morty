@@ -1,11 +1,22 @@
+import { Logo } from '@shared/ui';
+import { useNavigate } from 'react-router';
 import styles from './Header.module.scss';
-import Logo from '@assets/images/logo_sm.svg?react';
 
 export const Header = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <header className={styles.header}>
       <div className='container'>
-        <Logo />
+        <Logo
+          className={styles.header__logo}
+          onClick={handleLogoClick}
+          size='small'
+        />
       </div>
     </header>
   );

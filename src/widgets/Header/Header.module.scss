@@ -4,4 +4,8 @@
   padding: 5px;
   background: v.$light-bg-color;
   box-shadow: -2px 0px 8px 2px v.$shadow-color;
+
+  &__logo{
+    cursor: pointer;
+  }
 }
