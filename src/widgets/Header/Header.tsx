@@ -1,5 +1,7 @@
-import { Logo } from '@shared/ui';
 import { useNavigate } from 'react-router';
+
+import { Logo } from '@shared/ui';
+
 import styles from './Header.module.scss';
 
 export const Header = () => {

@@ -1,6 +1,7 @@
-import type { FC } from 'react';
-import styles from './Loader.module.scss';
 import clsx from 'clsx';
+import type { FC } from 'react';
+
+import styles from './Loader.module.scss';
 
 interface LoaderProps {
   size?: 'large' | 'small';

@@ -1,6 +1,7 @@
-import { MainPage, CharacterPage, Page404 } from '@pages/index';
-import { Layout } from '@shared/components';
 import { createBrowserRouter } from 'react-router';
+
+import { CharacterPage, MainPage, Page404 } from '@pages/index';
+import { Layout } from '@shared/components';
 
 export const router = createBrowserRouter([
   {

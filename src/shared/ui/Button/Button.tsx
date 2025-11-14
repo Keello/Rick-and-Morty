@@ -1,6 +1,7 @@
-import type { CSSProperties, FC, PropsWithChildren, ReactNode } from 'react';
-import styles from './Button.module.scss';
 import clsx from 'clsx';
+import type { CSSProperties, FC, PropsWithChildren, ReactNode } from 'react';
+
+import styles from './Button.module.scss';
 
 interface ButtonProps {
   icon?: ReactNode;

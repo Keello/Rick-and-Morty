@@ -1,8 +1,10 @@
-import styles from './Page404.module.scss';
-import { Button, Logo } from '@shared/ui';
-import ArrowBack from '@assets/icons/arrow_back.svg?react';
-import { useNavigate } from 'react-router';
 import clsx from 'clsx';
+import { useNavigate } from 'react-router';
+
+import ArrowBack from '@assets/icons/arrow_back.svg?react';
+import { Button, Logo } from '@shared/ui';
+
+import styles from './Page404.module.scss';
 
 const Page404 = () => {
   const navigate = useNavigate();

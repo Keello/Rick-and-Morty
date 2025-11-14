@@ -1,6 +1,7 @@
-import { type FC } from 'react';
-import styles from './Logo.module.scss';
 import clsx from 'clsx';
+import { type FC } from 'react';
+
+import styles from './Logo.module.scss';
 
 interface LogoProps {
   size?: 'large' | 'small';
