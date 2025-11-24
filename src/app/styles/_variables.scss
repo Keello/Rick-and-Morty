@@ -3,13 +3,14 @@ $light-bg-color: white;
 
 $primary-text-color: #000000;
 $secondary-text-color: #3f3f3f;
+$accent-color: #e1ffc2;
 $placeholder-color: rgba(0, 0, 0, 0.6);
 $border-color: rgba(0, 0, 0, 0.38);
-$shadow-color: rgba(0, 0, 0, 0.10);
+$shadow-color: rgba(0, 0, 0, 0.1);
 
-$status-success: #12B800;
-$status-error: #DF0000;
-$status-warning: #FF9900;
+$status-success: #12b800;
+$status-error: #df0000;
+$status-warning: #ff9900;
 
 :root {
   --default-text-color: #{$primary-text-color};

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useNavigate } from 'react-router';
 
-import ArrowBack from '@assets/icons/arrow_back.svg?react';
+import { ArrowBack } from '@assets/icons';
 import { Button, Logo } from '@shared/ui';
 
 import styles from './Page404.module.scss';

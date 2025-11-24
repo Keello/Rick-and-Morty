@@ -1,0 +1,63 @@
+@use '@styles/variables' as v;
+
+$radius: 8px;
+
+.select {
+  position: relative;
+  display: inline-block;
+  color: v.$placeholder-color;
+  font-size: 16px;
+  font-family: Roboto;
+  line-height: 20px;
+
+  &__backdrop{
+    position: absolute;
+    background: #000;
+    
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 220px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid v.$border-color;
+    border-radius: $radius;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    transition: transform 150ms ease;
+    &_open {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    margin-top: 8px;
+    padding: $radius 0;
+    overflow: auto;
+    background: #fff;
+    border: 1px solid v.$border-color;
+    border-radius: $radius;
+  }
+
+  &__option {
+    padding: 10px 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: v.$accent-color;
+    }
+
+    &_selected {
+      font-weight: 600;
+    }
+  }
+}

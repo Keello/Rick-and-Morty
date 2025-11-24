@@ -1,17 +1,28 @@
-import { Loader, Logo } from '@shared/ui';
+import { Logo, Select } from '@shared/ui';
 
 const MainPage = () => {
   return (
     <section>
-      <Logo />
-      <Loader
-        size='large'
-        label='some text for test'
-      />
-      <Loader
-        size='small'
-        label='some text for test'
-      />
+      <div className='container'>
+        <Logo />
+
+        <Select
+          options={[
+            {
+              label: 'Human',
+              value: 'Human'
+            },
+            {
+              label: 'Alien',
+              value: 'Alien'
+            },
+            {
+              label: 'Humanoid',
+              value: 'Humanoid'
+            }
+          ]}
+        />
+      </div>
     </section>
   );
 };
