@@ -1,26 +1,29 @@
 import clsx from 'clsx';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { ArrowDown } from '@app/assets/icons';
 
 import styles from './Select.module.scss';
-import type { Option } from './types';
+import { type ISelectOptionProps, SelectOption } from './SelectOption';
+import type { TOption } from './types';
 
-interface SelectProps {
-  options?: Option[];
+interface ISelectProps<T extends TOption> {
+  options?: T[];
   placeholder?: string;
-  value?: string | null;
-  onChange?: (value: string) => void;
+  value: T['value'];
+  onChange: (value: T['value']) => void;
   className?: string;
+  RenderOption?: React.FC<ISelectOptionProps<T>>;
 }
 
-export const Select: React.FC<SelectProps> = ({
+export const Select = <T extends TOption>({
   options = [],
   placeholder = 'Select option',
   value = null,
   onChange,
-  className
-}) => {
+  className,
+  RenderOption = SelectOption
+}: ISelectProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
@@ -40,11 +43,8 @@ export const Select: React.FC<SelectProps> = ({
 
   const handleToggle = () => setIsOpen((prev) => !prev);
 
-  const selectByIndex = (idx: number | null) => {
-    if (idx == null) return;
-    const opt = options[idx];
-    if (!opt) return;
-    onChange?.(opt.value);
+  const handleSelect = (value: T['value']) => {
+    onChange?.(value);
     setIsOpen(false);
   };
 
@@ -58,7 +58,7 @@ export const Select: React.FC<SelectProps> = ({
         className={styles.select__control}
         onClick={handleToggle}
       >
-        <span>{selectedOption ? selectedOption.label : placeholder}</span>
+        {selectedOption ? <RenderOption option={selectedOption} /> : placeholder}
         <ArrowDown
           className={clsx(styles.select__arrow, { [styles.select__arrow_open]: isOpen })}
         />
@@ -66,18 +66,18 @@ export const Select: React.FC<SelectProps> = ({
 
       {isOpen && (
         <ul className={styles.select__list}>
-          {options.map((opt, idx) => {
-            const isSelected = value === opt.value;
+          {options.map((option) => {
+            const isSelected = value === option.value;
 
             return (
               <li
-                key={opt.value}
+                key={option.value}
                 className={clsx(styles.select__option, {
                   [styles.select__option_selected]: isSelected
                 })}
-                onClick={() => selectByIndex(idx)}
+                onClick={() => handleSelect(option.value)}
               >
-                {opt.label}
+                <RenderOption option={option} />
               </li>
             );
           })}

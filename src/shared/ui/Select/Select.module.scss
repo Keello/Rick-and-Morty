@@ -7,17 +7,12 @@ $radius: 8px;
   display: inline-block;
   color: v.$placeholder-color;
   font-size: 16px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   line-height: 20px;
-
-  &__backdrop{
-    position: absolute;
-    background: #000;
-    
-  }
 
   &__control {
     display: flex;
+    gap: 5px;
     align-items: center;
     justify-content: space-between;
     min-width: 220px;
@@ -53,11 +48,12 @@ $radius: 8px;
     cursor: pointer;
 
     &:hover {
+      font-weight: 600;
       background: v.$accent-color;
     }
 
     &_selected {
-      font-weight: 600;
+      background: v.$accent-light-color;
     }
   }
 }

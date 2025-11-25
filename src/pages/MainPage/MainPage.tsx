@@ -1,12 +1,20 @@
+import { useState } from 'react';
+
 import { Logo, Select } from '@shared/ui';
 
 const MainPage = () => {
+  const [select, setSelect] = useState('');
+
   return (
     <section>
       <div className='container'>
         <Logo />
 
         <Select
+          value={select}
+          onChange={(val) => {
+            setSelect(val.toString());
+          }}
           options={[
             {
               label: 'Human',
@@ -21,6 +29,12 @@ const MainPage = () => {
               value: 'Humanoid'
             }
           ]}
+          RenderOption={({ option }) => (
+            <>
+              test:
+              {option.value}
+            </>
+          )}
         />
       </div>
     </section>
