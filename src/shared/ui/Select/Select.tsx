@@ -1,28 +1,29 @@
 import clsx from 'clsx';
-import { useEffect, useRef, useState } from 'react';
+import { type ReactElement, useEffect, useRef, useState } from 'react';
 
-import { ArrowDown } from '@app/assets/icons';
+import { ArrowDown, Close } from '@app/assets/icons';
 
 import styles from './Select.module.scss';
-import { type ISelectOptionProps, SelectOption } from './SelectOption';
 import type { TOption } from './types';
 
 interface ISelectProps<T extends TOption> {
   options?: T[];
   placeholder?: string;
-  value: T['value'];
-  onChange: (value: T['value']) => void;
+  value: T['value'] | null;
   className?: string;
-  RenderOption?: React.FC<ISelectOptionProps<T>>;
+  allowClear?: boolean;
+  onChange: (value: T['value']) => void;
+  renderOption?: (option: T) => ReactElement;
 }
 
 export const Select = <T extends TOption>({
   options = [],
   placeholder = 'Select option',
   value = null,
-  onChange,
   className,
-  RenderOption = SelectOption
+  allowClear = false,
+  onChange,
+  renderOption
 }: ISelectProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -48,19 +49,37 @@ export const Select = <T extends TOption>({
     setIsOpen(false);
   };
 
+  const handleClear = () => {
+    onChange?.(null);
+  };
+
+  const renderSelectOption = (option: T) => {
+    const customOption = renderOption?.(option);
+
+    return customOption ?? option.label;
+  };
+
   return (
     <div
       ref={rootRef}
       className={clsx(styles.select, className)}
     >
-      <div className={styles.select__backdrop} />
       <div
         className={styles.select__control}
         onClick={handleToggle}
       >
-        {selectedOption ? <RenderOption option={selectedOption} /> : placeholder}
+        {selectedOption ? renderSelectOption(selectedOption) : placeholder}
+        {allowClear && selectedOption ? (
+          <Close
+            className={clsx(styles.select__close)}
+            onClick={handleClear}
+          />
+        ) : null}
         <ArrowDown
-          className={clsx(styles.select__arrow, { [styles.select__arrow_open]: isOpen })}
+          className={clsx(styles.select__arrow, {
+            [styles.select__arrow_open]: isOpen,
+            [styles.select__arrow_withValue]: allowClear && selectedOption
+          })}
         />
       </div>
 
@@ -77,7 +96,7 @@ export const Select = <T extends TOption>({
                 })}
                 onClick={() => handleSelect(option.value)}
               >
-                <RenderOption option={option} />
+                {renderSelectOption(option)}
               </li>
             );
           })}

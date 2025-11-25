@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Logo, Select } from '@shared/ui';
 
 const MainPage = () => {
-  const [select, setSelect] = useState('');
+  const [select, setSelect] = useState<string | null>(null);
 
   return (
     <section>
@@ -11,9 +11,10 @@ const MainPage = () => {
         <Logo />
 
         <Select
+          allowClear
           value={select}
           onChange={(val) => {
-            setSelect(val.toString());
+            setSelect(val);
           }}
           options={[
             {
@@ -29,10 +30,11 @@ const MainPage = () => {
               value: 'Humanoid'
             }
           ]}
-          RenderOption={({ option }) => (
+          renderOption={(option) => (
             <>
               test:
               {option.value}
+              <div style={{ width: '20px', height: '20px', background: 'green' }} />
             </>
           )}
         />

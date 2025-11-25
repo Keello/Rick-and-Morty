@@ -21,13 +21,30 @@ $radius: 8px;
     border: 1px solid v.$border-color;
     border-radius: $radius;
     cursor: pointer;
+
+    &:hover {
+      .select__arrow_withValue {
+        opacity: 0;
+      }
+      .select__close {
+        opacity: 0.54;
+      }
+    }
   }
 
   &__arrow {
-    transition: transform 150ms ease;
+    transition: all 150ms ease;
     &_open {
       transform: rotate(-180deg);
     }
+  }
+
+  &__close {
+    position: absolute;
+    right: 18px;
+    opacity: 0;
+    transition: all 150ms ease;
+    z-index: 1;
   }
 
   &__list {
