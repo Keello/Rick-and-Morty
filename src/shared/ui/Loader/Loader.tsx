@@ -3,12 +3,12 @@ import type { FC } from 'react';
 
 import styles from './Loader.module.scss';
 
-interface LoaderProps {
+interface ILoaderProps {
   size?: 'large' | 'small';
   label?: string;
 }
 
-export const Loader: FC<LoaderProps> = ({ size = 'large', label }) => {
+export const Loader: FC<ILoaderProps> = ({ size = 'large', label }) => {
   const imageClasses = clsx(styles.loader__img, { [styles[`loader__img_${size}`]]: !!size });
 
   return (

@@ -7,13 +7,13 @@ import styles from './Select.module.scss';
 import type { TOption } from './types';
 
 interface ISelectProps<T extends TOption> {
+  value: T['value'] | null;
+  onChange: (value: T['value']) => void;
   options?: T[];
   placeholder?: string;
-  value: T['value'] | null;
   className?: string;
   allowClear?: boolean;
   size?: 'large' | 'small';
-  onChange: (value: T['value']) => void;
   renderOption?: (option: T) => ReactElement;
 }
 

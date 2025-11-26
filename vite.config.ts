@@ -15,13 +15,14 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '/src'),
-      '@app': path.resolve(__dirname, '/src/app'),
-      '@assets': path.resolve(__dirname, '/src/app/assets'),
+      '@icons': path.resolve(__dirname, '/src/app/assets/icons'),
+      '@images': path.resolve(__dirname, '/src/app/assets/images'),
       '@pages': path.resolve(__dirname, '/src/pages'),
       '@widgets': path.resolve(__dirname, '/src/widgets'),
       '@shared': path.resolve(__dirname, '/src/shared'),
-      '@styles': path.resolve(__dirname, '/src/app/styles')
+      '@styles': path.resolve(__dirname, '/src/app/styles'),
+      '@app': path.resolve(__dirname, '/src/app'),
+      '@': path.resolve(__dirname, '/src')
     }
   }
 });

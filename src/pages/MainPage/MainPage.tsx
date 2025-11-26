@@ -12,12 +12,12 @@ const MainPage = () => {
         <Status label='test label' />
         <Status
           label='test label'
-          type='warning'
+          status='warning'
           size={20}
         />
         <Status
           label='error label'
-          type='error'
+          status='error'
           size={30}
         />
         <Select

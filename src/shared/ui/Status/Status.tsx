@@ -3,21 +3,21 @@ import type { FC } from 'react';
 
 import styles from './Status.module.scss';
 
-interface StatusProps {
+interface IStatusProps {
   label?: string;
-  type?: 'success' | 'warning' | 'error';
+  status?: 'success' | 'warning' | 'error';
   size?: number;
 }
 
-export const Status: FC<StatusProps> = ({ label, type = 'success', size = 10 }) => {
+export const Status: FC<IStatusProps> = ({ label, status = 'success', size = 10 }) => {
   const sizeWithUnit = size + 'px';
 
   return (
     <div
       className={clsx(styles.status, {
-        [styles.status_success]: type === 'success',
-        [styles.status_warning]: type === 'warning',
-        [styles.status_error]: type === 'error'
+        [styles.status_success]: status === 'success',
+        [styles.status_warning]: status === 'warning',
+        [styles.status_error]: status === 'error'
       })}
     >
       <div
