@@ -12,6 +12,7 @@ interface ISelectProps<T extends TOption> {
   value: T['value'] | null;
   className?: string;
   allowClear?: boolean;
+  size?: 'large' | 'small';
   onChange: (value: T['value']) => void;
   renderOption?: (option: T) => ReactElement;
 }
@@ -22,6 +23,7 @@ export const Select = <T extends TOption>({
   value = null,
   className,
   allowClear = false,
+  size = 'large',
   onChange,
   renderOption
 }: ISelectProps<T>) => {
@@ -62,7 +64,7 @@ export const Select = <T extends TOption>({
   return (
     <div
       ref={rootRef}
-      className={clsx(styles.select, className)}
+      className={clsx(styles.select, className, { [styles.select_small]: size === 'small' })}
     >
       <div
         className={styles.select__control}
