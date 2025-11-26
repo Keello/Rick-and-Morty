@@ -14,7 +14,10 @@
     font-family: Karla, sans-serif;
   }
 
-  &__svg {
+  &__img {
+    background-image: url('@images/loader.png');
+    background-position: center;
+    background-size: cover;
     animation: spin 2s infinite linear;
 
     &_large {

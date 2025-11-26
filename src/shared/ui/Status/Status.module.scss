@@ -1,0 +1,32 @@
+@use '@styles/variables' as v;
+
+$size: var(--size, 10px);
+
+.status {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+
+  &__circle {
+    display: block;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+
+  &_success {
+    .status__circle {
+      background: v.$status-success;
+    }
+  }
+  &_warning {
+    .status__circle {
+      background: v.$status-warning;
+    }
+  }
+  &_error {
+    .status__circle {
+      background: v.$status-error;
+    }
+  }
+}

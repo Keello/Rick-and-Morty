@@ -10,6 +10,23 @@
   "bracketSpacing": true,
   "endOfLine": "lf",
   "plugins": [
-    "./node_modules/prettier-plugin-rational-order/src/index.js"
-  ]
+    "./node_modules/prettier-plugin-rational-order/src/index.js",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
+  "importOrder": [
+    "^[react]",
+    "^react-.*$",
+    "^./hooks",
+    "^@(?!/)",
+    "^@/assets",
+    "^@/entities",
+    "^@/features",
+    "^@/widget",
+    "^@/shared",
+    "^./ui",
+    "^[./]",
+    "\\.(scss|css)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

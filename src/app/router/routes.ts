@@ -1,6 +1,7 @@
-import { MainPage, CharacterPage } from '@pages/index';
-import { Layout } from '@shared/components';
 import { createBrowserRouter } from 'react-router';
+
+import { CharacterPage, MainPage, Page404 } from '@pages/index';
+import { Layout } from '@shared/components';
 
 export const router = createBrowserRouter([
   {
@@ -8,7 +9,11 @@ export const router = createBrowserRouter([
     Component: Layout,
     children: [
       { index: true, Component: MainPage },
-      { path: 'character', Component: CharacterPage }
+      { path: 'character', Component: CharacterPage },
+      {
+        path: '*',
+        Component: Page404
+      }
     ]
   }
 ]);

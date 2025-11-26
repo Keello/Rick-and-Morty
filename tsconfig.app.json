@@ -26,12 +26,13 @@
 
     "baseUrl": "src",
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@app/*": ["app/*"],
+      "@icons": ["app/assets/icons"],
+      "@images/*": ["app/assets/images"],
       "@pages/*": ["pages/*"],
       "@widgets/*": ["widgets/*"],
       "@shared/*": ["shared/*"],
-      "@styles/*": ["app/styles/*"]
+      "@styles/*": ["app/styles/*"],
+      "@app/*": ["app/*"]
     }
   },
   "exclude": ["node_modules"],

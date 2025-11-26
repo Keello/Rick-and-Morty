@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite';
 import path from 'path';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
+
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [
@@ -14,13 +15,14 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '/src'),
-      '@app': path.resolve(__dirname, '/src/app'),
+      '@icons': path.resolve(__dirname, '/src/app/assets/icons'),
+      '@images': path.resolve(__dirname, '/src/app/assets/images'),
       '@pages': path.resolve(__dirname, '/src/pages'),
       '@widgets': path.resolve(__dirname, '/src/widgets'),
       '@shared': path.resolve(__dirname, '/src/shared'),
-      '@assets': path.resolve(__dirname, '/src/app/assets'),
-      '@styles': path.resolve(__dirname, '/src/app/styles')
+      '@styles': path.resolve(__dirname, '/src/app/styles'),
+      '@app': path.resolve(__dirname, '/src/app'),
+      '@': path.resolve(__dirname, '/src')
     }
   }
 });
